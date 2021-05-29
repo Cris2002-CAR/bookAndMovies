@@ -10,17 +10,17 @@ public class ProductForSale extends Product implements Saleable{
 	}
 
 	@Override
-	public double applyExtraDiscount(double discount){
+	public double applyExtraDiscount(double percenteageDiscount){
 
 	}
 
 	@Override
-	public double calculateTax(double ){
+	public double calculateTax(double totalPrice, double percentage){
 
 	}
 
 	@Override
-	public double getSalePrice(int price){
+	public double getSalePrice(int units){
 
 
 	}

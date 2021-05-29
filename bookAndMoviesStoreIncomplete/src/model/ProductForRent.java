@@ -8,20 +8,21 @@ public class ProductForRent extends Product implements  Rentable{
 
 	private State state;
 
-	public ProductForRent(String code, String name, double price, ProductType type){
+	public ProductForRent(String code, String name, double price, ProductType type, State state){
 
 		super(code, name, price, type);
+		this.state = state;
 
 	}
 
 	@Overrides
-	public String rentProduct(int code){
+	public String rentProduct(int amountDays){
 
 
 	}
 
 	@Override
-	public double getRentPrice(int code){
+	public double getRentPrice(int amountDays){
 
 
 	}

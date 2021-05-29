@@ -130,7 +130,7 @@ public class MainShop {
 		
 	}
 	
-	public void addProductCatalog() {
+	public void addProductCatalog(){
 		
 	}
 	

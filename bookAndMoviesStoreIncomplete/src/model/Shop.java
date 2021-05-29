@@ -71,7 +71,27 @@ public class Shop {
 	 * informando que el producto ya existe. 
 	 */
 	public String addProduct(String code,String name, int units, double price, ProductType type) {
-		return "";
+
+		boolean find = false;
+
+		String out = "";
+
+		for(int i=0; i<catalog.size() && !find; i++){
+			if(catalog.get(i).getCode().equalsIgnoreCase(code)){
+				out = "El codigo ingresado ya existe, no hubo cambios";
+				find = true;
+			}
+			else{
+				ProductForSale p = new ProductForSale(code, name, units, price, type);
+				catalog.add(p);
+				out = "El producto fue agregado exitosamente";
+				find = true;
+
+			}
+
+		}
+
+		return out;
 	}
 	
 
@@ -89,7 +109,28 @@ public class Shop {
 	 * informando que el producto ya existe. 
 	 */
 	public String addProduct(String code, String name, double price, ProductType type) {
-		return "";
+
+		boolean find = false;
+
+		String out = "";
+
+		for(int i=0; i<catalog.size() && !find; i++){
+			if(catalog.get(i).getCode().equalsIgnoreCase(code)){
+				out = "El codigo ingresado ya existe, no hubo cambios.";
+				find = true;
+			}
+			else{
+				ProductForRent p = new ProductForRent(code, name, price, type);
+				catalog.add(p);
+				out = "El producto fue agregado exitosamente";
+				find = true;
+
+			}
+
+		}
+
+		return out;
+		
 	}
 	
 	/**
@@ -97,8 +138,17 @@ public class Shop {
 	 * que hay en el catalogo.
 	 * @return cadena con la informacion de los productos
 	 */
-	public String showCatalog() {
-		return "";
+	public String showCatalog(){
+
+		String out = "";
+
+		for(int i = 0; i<catalog.size(); i++){
+
+			out = (i+1)+" Producto: "+catalog.get(i).getName()+" Codigo: "+catalog.get(i).getCode()+"\n";
+
+
+		}
+		return out;
 	}
 	
 	/**
@@ -112,6 +162,14 @@ public class Shop {
 	 */
 	public Product findProduct(String code) {
 		Product p=null;
+
+		for(int i=0; i<catalog.size(); i++){
+			if((catalog.get(i).getCode() != null) &&(catalog.get(i).getCode() != "")){
+				if(catalog.get(i).getCode().equals(code)){
+					p = catalog.get(i);
+				}
+			}
+		}
 		
 		return p;
 	}
@@ -205,6 +263,9 @@ public class Shop {
 		 * si no: 
 		 *  - Se muestra un mensaje reportando el error.
 		 */
+
+		String out = "";
+		
 		return "";
 		
 	}
