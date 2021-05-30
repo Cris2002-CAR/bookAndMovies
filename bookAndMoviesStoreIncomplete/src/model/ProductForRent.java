@@ -19,6 +19,15 @@ public class ProductForRent extends Product implements  Rentable{
 	@Override
 	public String rentProduct(int amountDays){
 
+		String out = "";
+
+		State state1 = State.RENTED;
+
+		setState(state1);
+
+		out = "El producto ha sido rentado por "+amountDays+" dias";
+
+		return out;
 		
 
 	}

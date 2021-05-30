@@ -319,9 +319,13 @@ public class Shop {
 		 */
 		String answer = "";
 
+		double rentPrice;
+
 		if(p.isSafeRent()){
 
+			rentPrice = p.getRentPrice(days);
 
+			answer = p.rentProduct(days);
 
 
 		}
