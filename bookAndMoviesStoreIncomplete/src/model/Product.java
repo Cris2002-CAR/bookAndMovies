@@ -31,7 +31,7 @@ public abstract class Product {
 		this.units = units;
 	}
 	
-	public double getPrice(int units) {
+	public double getPrice() {
 		return price;
 	}
 	public void setPrice(double price) {

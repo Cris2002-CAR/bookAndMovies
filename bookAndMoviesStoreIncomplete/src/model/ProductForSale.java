@@ -7,26 +7,49 @@ public class ProductForSale extends Product implements Saleable{
 	public ProductForSale(String code, String name, int units, double price, ProductType type){
 
 		super(code, name, units, price, type);
+		
 	}
 
 	@Override
-	public double applyExtraDiscount(double percenteageDiscount){
+	public double applyExtraDiscount(double subtotal, double percenteageDiscount){
+
+		double out = subtotal * percenteageDiscount;
+
+		return out;
+
 
 	}
+
+
 
 	@Override
 	public double calculateTax(double totalPrice, double percentage){
 
+		double out = totalPrice * percentage;
+
+		out = out + totalPrice;
+
+		return out;
 	}
 
 	@Override
-	public double getSalePrice(int units){
+	public double getSalePrice(int units, double discount){
+
+		double price = getPrice();
+
+		double out = units * price - discount;
+
+		return out;
 
 
 	}
 
 	@Override
 	public String getInformation(){
+
+		String out = "product: "+getName()+" code: "+getCode();
+
+		return out;
 
 	}
 
@@ -35,7 +58,18 @@ public class ProductForSale extends Product implements Saleable{
 	}
 
 	@Override
-	public boolean isSafeSale(){
+	public boolean isSafeSale(int units){
+
+		boolean out;
+
+		if(units>0){
+			out = true;
+		}
+		else{
+			out = false;
+		}
+
+		return out;
 
 	}
 }

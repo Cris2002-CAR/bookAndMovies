@@ -8,33 +8,61 @@ public class ProductForRent extends Product implements  Rentable{
 
 	private State state;
 
-	public ProductForRent(String code, String name, double price, ProductType type, State state){
+	public ProductForRent(String code, String name, double price, ProductType type){
 
 		super(code, name, price, type);
-		this.state = state;
+		this.state = State.AVAILABLE;
+		LocalDate.of(2021,05,28);
 
 	}
 
-	@Overrides
+	@Override
 	public String rentProduct(int amountDays){
 
+		
 
 	}
 
 	@Override
 	public double getRentPrice(int amountDays){
 
+		double price = getPrice();
 
+		double out = amountDays * price;
+
+		return out;
 	}
 
 	@Override
 	public String getInformation(){
 
+		String out = "Product: "+getName()+" code: "+getCode();
 
 	}
 
 	@Override
 	public boolean isSafeRent(){
 
+		boolean out;
+
+		if(getState() == state.AVAILABLE){
+
+			out = true;
+		}
+		else{
+
+			out = false;
+		}
+
+		return out;
+
+	}
+
+	public State getState(){
+		return state;
+	}
+
+	public void setState(State state){
+		this.state = state;
 	}
 }

@@ -120,6 +120,7 @@ public class Shop {
 				find = true;
 			}
 			else{
+
 				ProductForRent p = new ProductForRent(code, name, price, type);
 				catalog.add(p);
 				out = "El producto fue agregado exitosamente";
@@ -257,16 +258,38 @@ public class Shop {
 		 * si es seguro: 
 		 * 	2. se calcula el precio de la venta 
 		 * 	3. se aplica el descuento extra
-		 * 	4. se calcula el monto de los impuestos
-		 * 	5. Se calcula el total a pagar y se incrementa el total de ventas
+		 * 	4. se calcula el monto de los impue * 	5. Se calcula el total a pagar y se incrementa el total de ventas
 		 * 	6. Se retorna un mensaje con el total a pagar y confirmando la venta
 		 * si no: 
 		 *  - Se muestra un mensaje reportando el error.
 		 */
 
-		String out = "";
-		
-		return "";
+		String answer = "";
+
+		double totalPrice;
+
+		double subtotal;
+
+		double salePrice;
+
+		if(p.isSafeSale(units)){
+
+			subtotal = p.getSalePrice(units,discount);
+
+			totalPrice = p.applyExtraDiscount(subtotal, discount); 
+
+			salePrice = p.calculateTax(totalPrice, TAX_IVA);
+
+			answer = "Se ha realizado la compre exitosamente con valor de: "+salePrice;
+
+			totalSales += salePrice;
+			
+		}
+		else{
+
+			answer = "No hay unidades para la venta";
+		}
+		return answer;
 		
 	}
 	
@@ -294,7 +317,19 @@ public class Shop {
 		 * si no: 
 		 *  - Se muestra un mensaje reportando el error.
 		 */
-		return"";
+		String answer = "";
+
+		if(p.isSafeRent()){
+
+
+
+
+		}
+		else{
+
+			answer = "El producto no se encuentra disponible";
+		}
+		return answer;
 	}
 	
 

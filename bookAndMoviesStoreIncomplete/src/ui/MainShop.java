@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import model.Shop;
 
+import model.ProductType;
+
 /**
  * 
  * @author angievig
@@ -131,6 +133,110 @@ public class MainShop {
 	}
 	
 	public void addProductCatalog(){
+
+		int option = 0;
+
+		System.out.println("1. For Sale "
+			+"\n2. For Rent");
+
+		System.out.print("Choose an option: ");
+		option = sc.nextInt();
+		sc.nextLine();
+		switch(option){
+			case 1:
+				System.out.print("Code: ");
+				String code = sc.nextLine();
+
+				System.out.print("Name: ");
+				String name = sc.nextLine();
+
+				System.out.print("Number units: ");
+				int units = sc.nextInt();
+				sc.nextLine();
+
+				System.out.print("Price: ");
+				double price = sc.nextDouble();
+				sc.nextLine();
+
+				System.out.print("Select a type: "
+					+"\n1. BOOK"
+					+"\n2. MAGAZINE"
+					+"\n3. DVD_MOVIE"
+					+"\n4. DOWNLOAD_MOVIE");
+				System.out.print("Choose an option: ");
+				int option2 = sc.nextInt();
+				sc.nextLine();
+
+				switch(option2){
+
+					case 1:
+						shop.addProduct(code, name, units, price, ProductType.BOOK);
+						break;
+					case 2:
+						shop.addProduct(code, name, units, price, ProductType.MAGAZINE);
+						break;
+					case 3:
+						shop.addProduct(code, name, units, price, ProductType.DVD_MOVIE);
+						break;
+					case 4:
+						shop.addProduct(code, name, units, price, ProductType.DOWNLOAD_MOVIE);
+						break;
+					default:
+						System.out.println("ERROR, INVALID OPTION");
+
+				}
+				break;
+
+			case 2:
+
+				System.out.print("Code: ");
+				String code2 = sc.nextLine();
+
+				System.out.print("Name: ");
+				String name2 = sc.nextLine();
+
+				System.out.print("Price: ");
+				double price2 = sc.nextDouble();
+				sc.nextLine();
+
+				System.out.print("Select a type: "
+					+"\n1. BOOK"
+					+"\n2. MAGAZINE"
+					+"\n3. DVD_MOVIE"
+					+"\n4. DOWNLOAD_MOVIE");
+				System.out.print("Choose an option: ");
+				int option3 = sc.nextInt();
+				sc.nextLine();
+
+				switch(option3){
+
+					case 1:
+						shop.addProduct(code2, name2, price2, ProductType.BOOK);
+						break;
+					case 2:
+						shop.addProduct(code2, name2, price2, ProductType.MAGAZINE);
+						break;
+					case 3:
+						shop.addProduct(code2, name2, price2, ProductType.DVD_MOVIE);
+						break;
+					case 4:
+						shop.addProduct(code2, name2, price2, ProductType.DOWNLOAD_MOVIE);
+						break;
+					default:
+						System.out.println("ERROR, INVALID OPTION");
+						break;
+
+				}
+				break;
+
+			default:
+				System.out.println("ERROR, INVALID OPTION");
+				break;
+
+
+
+		}
+
 		
 	}
 	

@@ -1,5 +1,7 @@
 package model;
 
+
+
 public interface Rentable{
 
 	public boolean isSafeRent();
