@@ -10,9 +10,9 @@ public class ProductForRent extends Product implements  Rentable{
 
 	public ProductForRent(String code, String name, double price, ProductType type){
 
-		super(code, name, price, type);
+		super(code, name, 1, price, type);
 		this.state = State.AVAILABLE;
-		LocalDate.of(2021,05,28);
+		devolutionDate = LocalDate.of(2021,05,28);
 
 	}
 
@@ -46,6 +46,8 @@ public class ProductForRent extends Product implements  Rentable{
 	public String getInformation(){
 
 		String out = "Product: "+getName()+" code: "+getCode();
+
+		return out;
 
 	}
 
