@@ -139,17 +139,19 @@ public class Shop {
 	 * que hay en el catalogo.
 	 * @return cadena con la informacion de los productos
 	 */
-	public String showCatalog(){
+	public void showCatalog(){
 
 		String out = "";
 
 		for(int i = 0; i<catalog.size(); i++){
 
-			out = (i+1)+" Producto: "+catalog.get(i).getName()+" Codigo: "+catalog.get(i).getCode()+"\n";
+			out = " Producto: "+catalog.get(i).getName()+" Codigo: "+catalog.get(i).getCode();
+
+			System.out.println(out);
 
 
 		}
-		return out;
+		
 	}
 	
 	/**

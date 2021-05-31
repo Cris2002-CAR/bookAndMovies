@@ -1,6 +1,6 @@
 package ui;
 
-import model.State;
+
 import model.ProductType;
 import model.Shop;
 

@@ -42,7 +42,7 @@ public class MainShop {
 			addProductCatalog();
 			break;
 		case 2:
-			System.out.println(shop.showCatalog());
+			shop.showCatalog();
 			break;
 		case 3:
 			processProduct();
@@ -162,7 +162,7 @@ public class MainShop {
 					+"\n1. BOOK"
 					+"\n2. MAGAZINE"
 					+"\n3. DVD_MOVIE"
-					+"\n4. DOWNLOAD_MOVIE");
+					+"\n4. DOWNLOAD_MOVIE\n");
 				System.out.print("Choose an option: ");
 				int option2 = sc.nextInt();
 				sc.nextLine();
@@ -203,7 +203,7 @@ public class MainShop {
 					+"\n1. BOOK"
 					+"\n2. MAGAZINE"
 					+"\n3. DVD_MOVIE"
-					+"\n4. DOWNLOAD_MOVIE");
+					+"\n4. DOWNLOAD_MOVIE\n");
 				System.out.print("Choose an option: ");
 				int option3 = sc.nextInt();
 				sc.nextLine();
