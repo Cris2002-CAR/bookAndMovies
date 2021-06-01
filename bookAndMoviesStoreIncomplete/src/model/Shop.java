@@ -81,14 +81,15 @@ public class Shop {
 				out = "El codigo ingresado ya existe, no hubo cambios";
 				find = true;
 			}
-			else{
-				ProductForSale p = new ProductForSale(code, name, units, price, type);
-				catalog.add(p);
-				out = "El producto fue agregado exitosamente";
-				find = true;
+		}
 
-			}
-
+		if(!find){
+			ProductForSale p = new ProductForSale(code, name, units, price, type);
+			catalog.add(p);
+			out = "El producto fue agregado exitosamente";
+		}
+		else{
+			out = "El producto no se ha agregado porque se ha repetido el codigo";
 		}
 
 		return out;
@@ -116,18 +117,18 @@ public class Shop {
 
 		for(int i=0; i<catalog.size() && !find; i++){
 			if(catalog.get(i).getCode().equalsIgnoreCase(code)){
-				out = "El codigo ingresado ya existe, no hubo cambios.";
 				find = true;
 			}
-			else{
 
-				ProductForRent p = new ProductForRent(code, name, price, type);
-				catalog.add(p);
-				out = "El producto fue agregado exitosamente";
-				find = true;
+		}
 
-			}
-
+		if(!find){
+			ProductForRent p = new ProductForRent(code, name, price, type);
+			catalog.add(p);
+			out = "El producto fue agregado exitosamente";
+		}
+		else {
+			out = "El producto no se ha agregado porque se ha repetido el codigo";
 		}
 
 		return out;
